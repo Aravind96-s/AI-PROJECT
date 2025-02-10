@@ -21,7 +21,6 @@ def take_command():
             if 'ALEXA' in command:
                 command=command.replace('ALEXA','')
                 print(command)
-
     except:
         pass
     return command
@@ -35,9 +34,6 @@ def run_command():
         time=datetime.datetime.now().strftime('%H:%M')
         print(time)
         talk('current time is '+time)
-    elif 'WHATSAPP' in command:
-        person=command.replace('WHATSAPP MESSAGE','')
-        pywhatkit.sendwhatmsg('+91'+person,'hi',22,38)
     elif 'WHO IS' in command:
         person=command.replace('WHO IS','')
         info=wikipedia.summary(person,3)
@@ -48,7 +44,5 @@ def run_command():
         talk(pyjokes.get_joke())
     else:
         talk('can you please tell agin')
-
-
 while True:
     run_command()
